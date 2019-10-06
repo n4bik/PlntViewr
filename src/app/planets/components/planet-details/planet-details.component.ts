@@ -9,6 +9,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./planet-details.component.scss']
 })
 export class PlanetDetailsComponent implements OnInit {
+  objectKeys = Object.keys;
   planet: any;
   planetsListSubscription: Subscription;
   urlArray;
@@ -33,12 +34,16 @@ export class PlanetDetailsComponent implements OnInit {
       .asObservable()
       .subscribe(
         data => {
+          console.log(decodeURI(this.urlArray[1]).trim().toLowerCase());
+          console.log(data[data.length - 1].name.trim().toLowerCase());
           if (data[data.length - 1].name.trim().toLowerCase() === decodeURI(this.urlArray[1]).trim().toLowerCase()) {
+            console.log(data);
             this.planet = data[data.length - 1];
-            console.log('FOUND MATCH!');
-            console.log(data[data.length - 1].name.trim().toLowerCase() + '===' + decodeURI(this.urlArray[1]).trim().toLowerCase())
+            console.log(this.planet);
+            this.planetsListSubscription.unsubscribe();
           }
         }
       );
   }
+
 }
