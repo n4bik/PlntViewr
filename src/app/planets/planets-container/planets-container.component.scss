@@ -1,4 +1,22 @@
 .pv-content-container {
-  padding: 30px;
-  display: flex;
+  padding-top: 20px;
+}
+
+.mat-card-title {
+  padding-top: 60px;
+}
+
+.mat-toolbar {
+  padding-top: 50px;
+  height: 150px;
+  background-color: #f6faf6;
+}
+
+.pv-planet-paginator {
+  padding-top: 80px;
+  background-color: #f6faf6;
+}
+
+.pv-planet-filter {
+  margin-top: 80px;
 }

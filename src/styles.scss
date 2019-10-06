@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Lato, "Helvetica Neue", sans-serif;
+  min-width: 950px;
+}
+
+.pv-mid-space-filler {
+  display: flex;
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}

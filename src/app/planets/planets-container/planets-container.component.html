@@ -1,3 +1,35 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <input
+      type="text"
+      class="pv-planet-filter"
+      [(ngModel)]="searchPlanet"
+      (click)="getAllPlanets()"
+      (blur)="returnToPagination()"
+      placeholder="Search For Your Planet...">
+
+    <span class="pv-mid-space-filler"></span>
+
+    <mat-paginator class="pv-planet-paginator"
+                   [length]="planetsCount"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="OnPageChange($event)">
+    </mat-paginator>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div class="pv-content-container">
-  Something
+  <mat-grid-list
+    cols="5"
+    rowHeight="300px">
+    <mat-grid-tile *ngFor="let planet of planetsList | planetFilter: searchPlanet">
+
+      <app-planet-card class="pv-planet-card">
+        <a [routerLink]="['/planet-details/', {name: planet.name}]"><mat-card-title>{{ planet.name }}</mat-card-title></a>
+        <mat-card-content><strong>climate: </strong> <em>{{ planet.climate }}</em></mat-card-content>
+      </app-planet-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
