@@ -1,14 +1,18 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <a class="pv-nav-go-back"
-      [routerLink]="'/'">
-      <mat-icon class="pv-planet-icon">language</mat-icon>| &nbsp; Back to &nbsp;<strong><em>Planet-o-matic</em></strong>
+       [routerLink]="'/'">
+      <mat-icon class="pv-planet-icon">language</mat-icon>
+      | &nbsp; Back to &nbsp;<strong><em>Planet-o-matic</em></strong>
     </a>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="pv-content-container">
-  <div *ngFor="let planetDetail of objectKeys(planet)">
-    <h1>{{planetDetail + ' : ' + planet[planetDetail]}}</h1>
+  <div *ngFor="let planetDetail of planetsList">
+    <div *ngIf="planetDetail.name === planetName">
+      <h1>{{ planetDetail.name }}</h1>
+      <h2>{{ planetDetail.climate }}</h2>
+    </div>
   </div>
 </div>
