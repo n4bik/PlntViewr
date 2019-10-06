@@ -1,0 +1,23 @@
+.pv-header {
+  width: 100vw;
+  height: 100px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+}
+
+.pv-header-row {
+  color: white;
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pv-mid-space-filler {
+  display: flex;
+  flex: 1;
+}
