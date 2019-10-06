@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PlanetsContainerComponent} from './planets/planets-container/planets-container.component';
-import {PlanetDetailsComponent} from './planets/planet-details/planet-details.component';
+import {PlanetsContainerComponent} from './planets/components/planets-container/planets-container.component';
+import {PlanetDetailsComponent} from './planets/components/planet-details/planet-details.component';
 
 
 const routes: Routes = [
