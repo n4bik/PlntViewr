@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {RestService} from '../../services/rest.service';
 import {PageEvent} from '@angular/material';
 import {Subscription} from 'rxjs';
@@ -24,6 +24,7 @@ export class PlanetsContainerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.initPlanets();
+    this.restService.getPlanetsList(0, 0, 5);
   }
 
   ngOnDestroy(): void {
@@ -37,7 +38,6 @@ export class PlanetsContainerComponent implements OnInit, OnDestroy {
       this.subscribeToPlanetsListChange();
       this.subscribeToPlanetsCountChange();
     } else {
-      this.restService.getPlanetsList(0, 0, 100);
       this.subscribeToPlanetsListChange();
       this.subscribeToPlanetsCountChange();
     }
@@ -89,7 +89,7 @@ export class PlanetsContainerComponent implements OnInit, OnDestroy {
     this.getPlanets(Math.ceil(this.planetsCount / 10) - this.restService.planetsPageToLoad, 0, 100);
   }
 
-  /*returnToPagination() {
+  returnToPagination() {
     this.getPlanets(0, this.startIndex, this.endIndex);
-  }*/
+  }
 }

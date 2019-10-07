@@ -6,6 +6,8 @@
       class="pv-planet-filter"
       [(ngModel)]="searchPlanet"
       (click)="getAllPlanets()"
+      (blur)="returnToPagination()"
+
       placeholder="Search For Your Planet...">
 
     <span class="pv-mid-space-filler"></span>
@@ -25,10 +27,10 @@
     rowHeight="300px">
     <mat-grid-tile *ngFor="let planet of planetsList | planetFilter: searchPlanet">
 
-      <app-planet-card class="pv-planet-card">
-        <a [routerLink]="['/planet-details/', {name: planet.name}]"><mat-card-title>{{ planet.name }}</mat-card-title></a>
+      <a [routerLink]="['/planet-details/', {name: planet.name}]"><app-planet-card class="pv-planet-card">
+        <mat-card-title>{{ planet.name }}</mat-card-title>
         <mat-card-content><strong>climate: </strong> <em>{{ planet.climate }}</em></mat-card-content>
-      </app-planet-card>
+      </app-planet-card></a>
 
     </mat-grid-tile>
   </mat-grid-list>

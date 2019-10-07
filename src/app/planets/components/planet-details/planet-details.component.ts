@@ -25,7 +25,7 @@ export class PlanetDetailsComponent implements OnInit, OnDestroy {
     this.subscribeToPlanetsListChange();
 
     if (this.restService.planetsPageToLoad < Math.ceil(this.restService.planetsCount / 10)) {
-      this.restService.getPlanetsList(7, 0, 100);
+      this.restService.getPlanetsList((Math.ceil(this.restService.planetsCount / 10 - this.restService.planetsPageToLoad)), 0, 100);
     } else {
       this.restService.getPlanetsList(0, 0, 100);
     }
