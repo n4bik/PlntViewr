@@ -48,9 +48,9 @@ export class RestService {
 
   private setUrlSuffix() {
     if (this.planetsPageToLoad === 1) {
-      this.url = 'https://swapi.co/api/planets/?format=json';
+      this.url = 'https://swapi.dev/api/planets/?format=json';
     } else {
-      this.url = 'https://swapi.co/api/planets/?format=json' + '&page=' + this.planetsPageToLoad;
+      this.url = 'https://swapi.dev/api/planets/?format=json' + '&page=' + this.planetsPageToLoad;
     }
   }
 }
